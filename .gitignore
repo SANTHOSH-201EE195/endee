@@ -1,0 +1,41 @@
+# Ignore build directory
+build/
+# Ignore build like directory
+build*/
+# Ignore all files# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Docker/Endee
+db/
+engine/build/
+engine/third_party/
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+**/ndd_filter_test
+
+# macOS debug symbols
+*.dSYM/
+
+# Sometimes data files are created for tetsing
+data/
+data/*
+
+# VS Code directory
+.vscode/
+.vscode/*
+
+# Frontend
+frontend/
+frontend/*
+
+# DS Store
+.DS_Store

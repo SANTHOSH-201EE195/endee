@@ -1,0 +1,25 @@
+services:
+  endee-oss:
+    build:
+      context: ./engine
+      dockerfile: Dockerfile
+      args:
+        BUILD_ARCH: avx2 # Valid flag for install.sh
+        DEBUG: "false"
+    container_name: endee-oss
+    ports:
+      - "8081:8080"
+    ulimits:
+      nofile: 100000
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200m"
+        max-file: "5"
+    environment:
+      NDD_NUM_THREADS: 0
+      NDD_AUTH_TOKEN: "test" # Matched with app.py/database.py
+      NDD_DATA_DIR: /data
+    volumes:
+      - ./db:/data
+    restart: unless-stopped
